@@ -1,10 +1,16 @@
 package functionalinterface;
 
+import java.util.function.Consumer;
+
 public class _Consumer {
     public static void main(String [] args) {
+        //Normal Java Function
         Customer maria = new Customer("Maria", "9999999");
-
         greetCustomer(maria);
+
+        //Consumer Function Interface
+        Customer consumerCustomer = new Customer("Consumer Customer", "555555");
+        greetCustomerConsumer.accept(consumerCustomer);
     }
 
     //Imperative Approach
@@ -13,6 +19,12 @@ public class _Consumer {
                 ", thanks for registering with phone number "
                 +customer.customerPhone);
     }
+
+    //Declarative Approach
+    static Consumer<Customer> greetCustomerConsumer = customer ->
+            System.out.println("Hello "+customer.customerName+"" +
+                    ", thanks for registering with phone number "
+                    +customer.customerPhone);
 
     static class Customer {
         private final String customerName;

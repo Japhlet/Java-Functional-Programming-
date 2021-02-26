@@ -4,10 +4,11 @@ import java.util.function.Function;
 
 public class _Functional {
     public static void main(String [] args) {
+        //Normal Java Function
         int increment = incrementByOne(0);
-
         System.out.println("Imperative Increment: "+increment);
 
+        //Function Interface
         int increment1 = incrementByOneFunction.apply(1);
         System.out.println("Declarative Increment: "+increment1);
 

@@ -4,9 +4,11 @@ import java.util.function.BiFunction;
 
 public class _BiFunction {
     public static void main(String [] args) {
+        //Normal Java Function
         int result = incrementByOneAndMultiply(1,10);
         System.out.println("Imperative: "+result);
 
+        //BiFunction Interface
         int outcome = incrementByOneAndMultiplyBiFunction.apply(4, 100);
         System.out.println("Declarative: "+outcome);
     }
